@@ -1,0 +1,12 @@
+spring:
+  config:
+    activate:
+      on-profile:
+        - dev
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+
+server:
+  port: 10000

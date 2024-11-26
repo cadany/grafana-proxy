@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+    function go(){
+      alert("go");
+      var host = document.querySelector("#host").value;
+      var frame = document.querySelector("#grafanaviewer");
+      frame.src = "http://192.168.101.21:28300/g/d/9CWBz0bik/1-node-exporter-for-prometheus-dashboard-cn-v20201010?orgId=1&from=now-30m&to=now&var-origin_prometheus=&var-job=node-exporter&var-hostname=All&var-device=All&var-interval=2m&var-maxmount=%2Fhome&var-show_hostname=localhost&var-total=59&var-node="+host+"&kiosk";
+    }
+</script>
+demo.html
+<br />
+<input id="host" /><button onclick="go();">go</button>
+<iframe
+        id="grafanaviewer"
+        src="http://192.168.101.21:28300/g/d/9CWBz0bik/1-node-exporter-for-prometheus-dashboard-cn-v20201010?orgId=1&refresh=15s&kiosk"
+        width="100%"
+        height="800"
+        frameborder="0">
+</iframe>
+
+
+</body>
+</html>
