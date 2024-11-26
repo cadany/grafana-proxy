@@ -1,9 +1,12 @@
 
-## 流程1
+# Granfan 前端代理
+
+解决将grafan页面集成到应用层时鉴权信息统一的问题，通过在GrafanaProxyServlet中完成应用侧的用户鉴权，鉴权通过后再传递grafana的访问。
+
+## 流程1:应用侧鉴权
 1、vue（iframe） -> nginx -> grafana-proxy(springboot) -> grafana
 
 通过服务访问grafana的方案。示例页面：
-
 
     nginx: 192.168.101.21:28300
     grafana-proxy: 192.168.101.21:48080
@@ -45,10 +48,10 @@
     }
 ```
 
-## 流程2
+## 流程2:nginx添加grafana用户信息
 2、vue -> nginx -> grafana
 
-不通过服务，直接由nginx代理grafana的方案。示例页面：
+不通过服务，直接由nginx代理grafana的方案。但要把X-AUTH-USER放在header中，否则需要开启匿名访问。示例页面：
 
 http://192.168.101.21:28300/m/index.html
 
